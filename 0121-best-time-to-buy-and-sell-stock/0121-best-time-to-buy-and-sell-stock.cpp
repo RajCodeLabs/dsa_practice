@@ -3,7 +3,8 @@ public:
     int maxProfit(vector<int>& prices) {
         int maxProfit = 0, profit;
         auto buyDay = prices.begin();
-        for(auto sellDay = prices.begin() + 1; sellDay != prices.end(); sellDay++)
+        auto sellDay = prices.begin() + 1;
+        while(sellDay != prices.end())
         {
             if(*(buyDay) > *(sellDay))
             {
@@ -14,9 +15,8 @@ public:
                 profit = *(sellDay) - *(buyDay);
                 maxProfit = max(maxProfit, profit);
             }
+            sellDay++;
         }
-
         return maxProfit;
-
     }
 };
