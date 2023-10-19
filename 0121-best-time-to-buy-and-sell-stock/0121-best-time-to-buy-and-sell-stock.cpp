@@ -1,9 +1,8 @@
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        int maxProfit = 0, profit;
-        auto buyDay = prices.begin();
-        auto sellDay = prices.begin() + 1;
+        int maxProfit = 0;
+        auto buyDay = prices.begin(), sellDay = prices.begin() + 1;
         while(sellDay != prices.end())
         {
             if(*(buyDay) > *(sellDay))
@@ -12,8 +11,7 @@ public:
             }
             else
             {
-                profit = *(sellDay) - *(buyDay);
-                maxProfit = max(maxProfit, profit);
+                maxProfit = max(maxProfit, *(sellDay) - *(buyDay));
             }
             sellDay++;
         }
