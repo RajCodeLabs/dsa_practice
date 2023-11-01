@@ -12,16 +12,17 @@ public:
         for(i = 1; i < len; i++)
         {
             difference = nums[i] - nums[i-1];
-            if((difference == 1))
+            switch(difference)
             {
-                currentSequence += 1;
-                maxSequence = max(currentSequence, maxSequence);
-            }
-            else if(difference == 0)
-                continue;
-            else
-            {
-                currentSequence = 0;
+                case 0:
+                    continue;
+                case 1:
+                    currentSequence += 1;
+                    maxSequence = ((maxSequence > currentSequence) ? maxSequence : currentSequence);
+                    break;
+                default:
+                    currentSequence = 0;
+                    break;
             }
         }
         
