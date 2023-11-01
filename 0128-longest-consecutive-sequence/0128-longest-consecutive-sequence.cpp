@@ -2,7 +2,7 @@ class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
         
-        int i, difference, maxSequence = 0, currentSequence = 0, len = nums.size();
+        int i, maxSequence = 0, currentSequence = 0, len = nums.size();
         
         if(len < 1)
             return 0;
@@ -11,8 +11,7 @@ public:
         
         for(i = 1; i < len; i++)
         {
-            difference = nums[i] - nums[i-1];
-            switch(difference)
+            switch(nums[i] - nums[i-1])
             {
                 case 0:
                     continue;
