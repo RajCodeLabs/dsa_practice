@@ -28,15 +28,6 @@ public:
         
         return slow;
         
-//         for(len = 0; temp != NULL; temp = temp->next)
-//         {
-//             len++;
-//         }
-        
-//         for(i = 0; i < (len/2); i++)
-//         {
-//             head = head->next;
-//         }
         
     }
 };
