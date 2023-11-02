@@ -12,21 +12,31 @@ class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
         
-        //iterative approach
+        //two pointers approach
         
-        ListNode* temp = head;
-        int len, i;
+        ListNode* slow = head;
+        ListNode* fast = head;
         
-        for(len = 0; temp != NULL; temp = temp->next)
+        while(fast != NULL)
         {
-            len++;
+            fast = fast->next;
+            if(fast == NULL)
+                break;
+            fast = fast->next;
+            slow = slow->next;
         }
         
-        for(i = 0; i < (len/2); i++)
-        {
-            head = head->next;
-        }
+        return slow;
         
-        return head;
+//         for(len = 0; temp != NULL; temp = temp->next)
+//         {
+//             len++;
+//         }
+        
+//         for(i = 0; i < (len/2); i++)
+//         {
+//             head = head->next;
+//         }
+        
     }
 };
