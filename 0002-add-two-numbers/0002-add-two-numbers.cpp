@@ -31,8 +31,7 @@ public:
                 l2 = l2 -> next;
             }
             
-            if(carry)
-                sum += carry;
+            sum += carry;
             
             carry = sum / 10;
             
