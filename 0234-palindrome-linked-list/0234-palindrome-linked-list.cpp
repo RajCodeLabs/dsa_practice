@@ -26,16 +26,8 @@ public:
             slow=head;
         }
 
-        
-        if(fast != NULL)
-        {
-            fast = head -> next;
-        }
-        else
-        {
-            fast = head;
-        }
-
+        fast = (fast != NULL) ? (head -> next) : (head);
+  
         while(fast != NULL){
             if(fast -> val != prev -> val)
                 return false;
